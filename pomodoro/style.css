@@ -64,7 +64,7 @@ nav h2 {
     justify-content: center;
 }
 
-.button {
+#button-start {
     background-color: #f5d7d7;
     width: max-content;
     padding-inline: 100px;
@@ -74,10 +74,13 @@ nav h2 {
     cursor: pointer;
 }
 
-.button h2 {
+#button-start h2 {
     color: var(--color-primary);
 }
-
-.button:hover {
+#button-start:hover {
     background-color: #ebb0b0;
+}
+
+#timer {
+    font-size: 10em;
 }
