@@ -120,7 +120,7 @@ nav {
 }
 
 .result-container {
-    max-width: 65%;
+    max-width: 50%;
     margin: 0 auto;
     padding: 10px;
 }
@@ -129,7 +129,19 @@ nav {
     background: #fff;
     border: none;
     border-radius: 10px;
+    min-height: 100px;
     padding: 15px;
     margin: 15px 0;
     box-shadow: 2px 3px 5px rgba(0,0,0,0.1);
+    font-size: 15px;
+    line-height: 2;
+}
+
+.result-box .question {
+    font-size: 20px;
+}
+
+.result-box.incorrect {
+    background: #D46D6D;
+    color: #FFFFFF;
 }
