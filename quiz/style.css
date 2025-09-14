@@ -25,7 +25,6 @@ nav {
     max-width: 85%;
     margin: 0 auto;
     padding: 2px;
-    display: none;
 }
 
 .box-quiz {
@@ -34,11 +33,13 @@ nav {
     border-radius: 13px;
     min-height: 590px;
     overflow: hidden;
+    box-shadow: 2px 3px 5px rgba(0,0,0,0.1);
 }
 
 .box-quiz .timer {
     text-align: right;
     font-weight: bold;
+    font-size: 25px;
     margin-right: 20px;
     margin-top: 15px;
 }
@@ -123,6 +124,7 @@ nav {
     max-width: 50%;
     margin: 0 auto;
     padding: 10px;
+    display: none;
 }
 
 .result-box {
@@ -144,4 +146,25 @@ nav {
 .result-box.incorrect {
     background: #D46D6D;
     color: #FFFFFF;
+}
+
+.back-button {
+    background-color: #D46D6D;
+    color: #FFFFFF;
+    border-radius: 5px;
+    text-align: center;
+    height: 50px;
+    font-size: 35px;
+    box-shadow: 2px 3px 5px rgba(0,0,0,0.1);
+}
+
+.back-button:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+    transition: all 0.2s ease;
+}
+
+.back-button:active {
+    transform: scale(0.99);   
+    box-shadow: none;   
 }
