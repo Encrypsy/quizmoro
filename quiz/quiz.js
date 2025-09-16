@@ -50,5 +50,52 @@ let dataquiz = [
         correct: "Bukan keduanya",
     }
 
-]
+];
 
+const quizcontainer = document.querySelector(".quiz-container");
+const question = document.querySelector(".quiz-container .question");
+const option = document.querySelector(".quiz-container .option"); 
+const next = document.querySelector(".quiz-container .next");
+const quizresult = document.querySelector(".result-container");
+
+let questionNumber = 0;
+const Maxquestion = 10;
+
+const shuffleArray = array => {
+    return array.slice().sort(() => Math.random() - 0.5);
+};
+
+dataquiz = shuffleArray(dataquiz);
+
+const createquestion = () => {
+    option.innerHTML = "";
+    question.innerHTML = dataquiz[questionNumber].question;
+
+    const shuffledoption = shuffleArray(dataquiz[questionNumber].option);
+    
+    shuffledoption.forEach(o => {
+        const btn = document.createElement("button");
+        btn.classList.add("button")
+        btn.innerHTML = o;
+        option.appendChild(btn);
+    });
+};
+
+const displayquizresult = () => {
+    quizresult.style.display = "flex";
+    quizcontainer.style.display = "none";
+}
+
+createquestion();
+
+const displaynextquestion = () => {
+    if (questionNumber >= Maxquestion -1) {
+        displayquizresult();
+        return;
+    }
+
+    questionNumber++;
+    createquestion();
+}
+
+next.addEventListener("click", displaynextquestion)
