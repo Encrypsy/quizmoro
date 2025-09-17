@@ -11,7 +11,7 @@ let dataquiz = [
     },
     {
         question: "Ekspor Indonesia naik dari US$63,75 miliar(2022) menjadi US$69, 86 miliar(2023). Kenaikannya sekitar?",
-        option: ["10%", "15%", "8%"], 
+        option: ["10%", "15%", "18%"], 
         correct: "18%",
     },
     {
@@ -59,7 +59,9 @@ const next = document.querySelector(".quiz-container .next");
 const quizresult = document.querySelector(".result-container");
 
 let questionNumber = 0;
+let score = 0;
 const Maxquestion = 10;
+let timerInterval;
 
 const shuffleArray = array => {
     return array.slice().sort(() => Math.random() - 0.5);
@@ -67,16 +69,66 @@ const shuffleArray = array => {
 
 dataquiz = shuffleArray(dataquiz);
 
+const resetLocalStorage = () => {
+    for(i = 0; i < Maxquestion; i++) {
+        localStorage.removeItem(`useranswer_${i}`);
+    }
+};
+
+resetLocalStorage();
+
+const checkanswer = (e) => {
+    let useranswer = e.target.textContent;
+    if(useranswer === dataquiz[questionNumber].correct) {
+        score++;
+        e.target.classList.add("correct");
+    } else {
+        e.target.classList.add("incorrect");
+    }
+
+    localStorage.setItem(`useranswer_${questionNumber}`, useranswer);
+
+    let alloption = document.querySelectorAll(".quiz-container .option .button");
+    alloption.forEach(o => {
+        o.classList.add("disabled");
+    });
+};
+
 const createquestion = () => {
+    clearInterval(timerInterval);
+
+    let secondsleft = 29;
+    const timerdisplay = document.querySelector(".quiz-container .timer");
+    timerdisplay.classList.remove("danger");
+
+    timerdisplay.textContent = `Waktu yg tersisa: 30d`
+
+    timerInterval = setInterval(() => {
+        timerdisplay.textContent = `Waktu yg tersisa: ${secondsleft.toString().padStart(2,'0')}d`;
+        secondsleft--;
+
+        if (secondsleft < 10) {
+            timerdisplay.classList.add("danger")
+        }
+
+        if(secondsleft < 0){
+            clearInterval(timerInterval);
+            displaynextquestion();
+        }
+    }, 1000);
+
     option.innerHTML = "";
-    question.innerHTML = dataquiz[questionNumber].question;
+    question.innerHTML = `<span class='question-number'>${questionNumber + 1
+
+    }/${Maxquestion}</span>${dataquiz[questionNumber].question}`;
 
     const shuffledoption = shuffleArray(dataquiz[questionNumber].option);
     
     shuffledoption.forEach(o => {
         const btn = document.createElement("button");
         btn.classList.add("button")
-        btn.innerHTML = o;
+        btn.textContent = o;
+        option.addEventListener("click", checkanswer)
         option.appendChild(btn);
     });
 };
@@ -84,7 +136,38 @@ const createquestion = () => {
 const displayquizresult = () => {
     quizresult.style.display = "flex";
     quizcontainer.style.display = "none";
-}
+    quizresult.innerHTML = "";
+
+    const resultheading = document.createElement("h2");
+    resultheading.innerHTML = `Score: ${score} dari ${Maxquestion}.`;
+    quizresult.appendChild(resultheading);
+
+    for (let i = 0; i < Maxquestion; i++) {
+        const resultitem = document.createElement("div");
+        resultitem.classList.add("result-box");
+
+        const useranswer = localStorage.getItem(`useranswer_${i}`);
+        const correctanswer = dataquiz[i].correct;
+
+        let answeredcorrecttly = useranswer === correctanswer;
+
+        if(!answeredcorrecttly) {
+            resultitem.classList.add("incorrect")
+        }
+
+        resultitem.innerHTML = `<div class="question">
+        Pertanyaan ${i + 1} : ${dataquiz[i].question}
+        </div>
+        <div class="user-answer">
+        Jawabanmu: ${useranswer || "Tidak menjawab"}
+        </div>
+        <div class="correct-answer">
+        Jawaban yg benar: ${correctanswer}
+        </div>`;
+
+        quizresult.appendChild(resultitem);
+    }
+};
 
 createquestion();
 

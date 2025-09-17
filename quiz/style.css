@@ -90,6 +90,18 @@ nav {
     box-shadow: none;   
 }
 
+.disabled {
+    pointer-events: none;
+}
+
+.option .button.correct {
+    background: #A1FBA7;
+}
+
+.option .button.incorrect {
+    background: #F4ACAC;
+}
+
 .next {
     display: flex;
     justify-content: end;
@@ -145,7 +157,7 @@ nav {
     font-size: 20px;
 }
 
-.result-box.incorrect {
+.result-box .incorrect {
     background: #D46D6D;
     color: #FFFFFF;
 }
@@ -171,3 +183,14 @@ nav {
     transform: scale(0.99);   
     box-shadow: none;   
 }
+
+.question-number {
+    font-size: 30px;
+    margin-right: 20px;
+    background-color: #D46D6D;
+    color: #fff;
+    border-radius: 7px;
+    padding: 5px;
+    width: 5px;
+}
+
