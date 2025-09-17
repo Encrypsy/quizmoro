@@ -32,7 +32,7 @@ const startBtn = document.getElementById('button-start')
 const pauseBtn = document.getElementById('button-pause')
 const restartBtn = document.getElementById('button-restart')
 
-let timeLeft = 1500; // 25 menit
+let timeLeft = 300; // 25 menit
 let interval;
 
 const updateTimer = () => {
@@ -51,7 +51,7 @@ const startTimer = () => {
                 clearInterval(interval)
                 interval = null
                 alert('Waktunya habis! Saatnya break 🎉')
-                timeLeft = 1500
+                timeLeft = 300
                 updateTimer()
             }
         }, 1000)
@@ -66,7 +66,7 @@ const pauseTimer = () => {
 const restartTimer = () => {
     clearInterval(interval)
     interval = null
-    timeLeft = 1500
+    timeLeft = 300
     updateTimer()
 }
 

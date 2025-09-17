@@ -2,12 +2,17 @@
 
 :root {
     --font-primary: 'Inria Sans';
+    --color-transparent-black: #5f5f5f;
+    --color-primary: #D46D6D;
+    --color-secondary: #f0b3b3;
+    --color-body: #FFFCDF;
 }
+
 
 body {
     font-family: var(--font-primary);
     color: #FFFF;
-    background-color: #FAF1DC;
+    background-color: var(--color-body);
     margin: 0;
     padding: 0;
 }
@@ -17,7 +22,7 @@ body {
 }
 
 .header {
-    background: #58ACA5;    
+    background: var(--color-secondary);    
     height: 120px;
     border-bottom-left-radius: 60px;
     border-bottom-right-radius: 60px;
@@ -27,13 +32,14 @@ body {
 }
 
 .header h2 {
-    color: #D46D6D;
+    color: var(--color-primary);
     font-size: 30px;
 }
 
 .welcome {
     display: inline-block;
-    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    /* background: linear-gradient(to right, #ff9a9e, #fad0c4); */
+    background-color: var(--color-primary);
     font-weight: bold;
     padding: 8px 20px;
     border-radius: 8px;
@@ -44,7 +50,7 @@ body {
 
 .start-pomodoro .box-pomodoro {
     box-sizing: border-box;
-    background-color: #58ACA5;
+    background-color: var(--color-primary);
     overflow: hidden;
     height: 200px;
     max-width: 900px;
@@ -56,7 +62,8 @@ body {
 
 .start-pomodoro .box-pomodoro:hover {
     cursor: pointer;
-    background: linear-gradient(to right, #58ACA5, #fad0c4);
+    /* background: linear-gradient(to right, #58ACA5, #fad0c4); */
+    background-color: var(--color-primary);
     transform: scale(1.02);
     transition: all 0.2s ease;
 }
@@ -64,7 +71,7 @@ body {
 .start-quiz .box-quiz {
     box-sizing: border-box;
     margin-top: 35px;
-    background-color: #58ACA5;
+    background-color: var(--color-primary);
     overflow: hidden;
     height: 200px;  
     max-width: 900px;
@@ -76,7 +83,8 @@ body {
 
 .start-quiz .box-quiz:hover {
     cursor: pointer;
-    background: linear-gradient(to right, #58ACA5, #fad0c4);
+    /* background: linear-gradient(to right, #58ACA5, #fad0c4); */
+    background-color: var(--color-primary);
     transform: scale(1.02);
     transition: all 0.2s ease;
 }

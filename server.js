@@ -1,35 +1,67 @@
 var http = require("http")
 var fs = require("fs")
-var path = require("path")
+const { REPL_MODE_STRICT } = require("repl")
 
 http.createServer(function (request, response) {
-    let filePath = ""
 
     switch (request.url) {
       case "/":
-        filePath = "landingpg.html"
-        break;
+        fs.readFile("landingpg.html", (err, data) => {
+            if (err) {
+                response.writeHead(404, {'content-type': 'text/plain'})
+                response.write('file nya ga muncul T-T')
+                response.end()
+                return
+            }
+
+            response.writeHead(200, {'content-type': 'text/html'})
+            response.write(data)
+            response.end
+        })
+        break
       case "/quiz":
-        filePath = "quiz/index.html"
-        break;
+        fs.readFile("quiz/index.html", (err, data) => {
+            if (err) {
+                response.writeHead(404, {'content-type': 'text/plain'})
+                response.write('file nya ga muncul T-T')
+                response.end()
+                return
+            }
+
+            response.writeHead(200, {'content-type': 'text/html'})
+            response.write(data)
+            response.end
+        })
+        break
       case "/pomodoro-timer":
-        filePath = "pomodoro/index.html"
-        break;
+        fs.readFile("pomodoro/index.html", (err, data) => {
+            if (err) {
+                response.writeHead(404, {'content-type': 'text/plain'})
+                response.write('file nya ga muncul T-T')
+                response.end()
+                return
+            }
+
+            response.writeHead(200, {'content-type': 'text/html'})
+            response.write(data)
+            response.end
+        })
+        break
       default:
         response.writeHead(404, { "Content-Type": "text/plain" })
         response.end("404: Halaman tidak ditemukan")
         return
     }
 
-    fs.readFile(filePath, (err, data) => {
-      if (err) {
-        response.writeHead(500, { "Content-Type": "text/plain" })
-        response.end("500: Error server")
-      } else {
-        response.writeHead(200, { "Content-Type": "text/html" })
-        response.end(data)
-      }
-    });
+    // fs.readFile(filePath, (err, data) => {
+    //   if (err) {
+    //     response.writeHead(500, { "Content-Type": "text/plain" })
+    //     response.end("500: Error server")
+    //   } else {
+    //     response.writeHead(200, { "Content-Type": "text/html" })
+    //     response.end(data)
+    //   }
+    // });
   })
   .listen(8000)
 
