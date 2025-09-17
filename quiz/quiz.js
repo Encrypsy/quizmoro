@@ -5,12 +5,12 @@ let dataquiz = [
         correct: "2024",
     },
     {
-        question: "Lima pulau terbesar Indonesia: Papua, Kalimantan, Sumatra, Sulawesi, Jawa. Median luasnya adalah pulau?",
+        question: "5 pulau terbesar Indonesia: Papua, Kalimantan, Sumatra, Sulawesi, Jawa. Median luasnya adalah pulau?",
         option: ["Kalimantan", "Sumatra", "Sulawesi"], 
         correct: "Sumatra",
     },
     {
-        question: "Ekspor Indonesia naik dari US$63,75 miliar (2022) menjadi US$69,86 miliar (2023). Kenaikannya sekitar?",
+        question: "Ekspor Indonesia naik dari US$63,75 miliar(2022) menjadi US$69, 86 miliar(2023). Kenaikannya sekitar?",
         option: ["10%", "15%", "8%"], 
         correct: "18%",
     },
