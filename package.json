@@ -1,0 +1,23 @@
+{
+  "name": "quizmoro",
+  "version": "1.0.0",
+  "description": "- https://coolors.co/af4d98-d66ba0-e5a9a9-f4e4ba-9df7e5\r - https://coolors.co/f79f79-f7d08a-e3f09b-87b6a7-5b5941",
+  "main": "landback.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Encrypsy/quizmoro.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Encrypsy/quizmoro/issues"
+  },
+  "homepage": "https://github.com/Encrypsy/quizmoro#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
