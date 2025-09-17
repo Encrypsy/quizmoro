@@ -9,10 +9,15 @@ body {
     color: #FFFF;
     background-color: #FAF1DC;
     margin: 0;
+    padding: 0;
+}
+
+.container {
+    text-align: center;
 }
 
 .header {
-    background: #4db6ac;    
+    background: #58ACA5;    
     height: 120px;
     border-bottom-left-radius: 60px;
     border-bottom-right-radius: 60px;
@@ -24,4 +29,77 @@ body {
 .header h2 {
     color: #D46D6D;
     font-size: 30px;
+}
+
+.welcome {
+    display: inline-block;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    font-weight: bold;
+    padding: 8px 20px;
+    border-radius: 8px;
+    margin-top: -20px;
+    box-shadow: 0 4px 6px rgb(0, 0, 0, 0.15);
+    font-size: 25px;
+}
+
+.start-pomodoro .box-pomodoro {
+    box-sizing: border-box;
+    background-color: #58ACA5;
+    overflow: hidden;
+    height: 200px;
+    max-width: 900px;
+    width: 90%;
+    border-radius: 20px;
+    margin: 30px auto;
+    box-shadow: 0 4px 6px rgb(0, 0, 0, 0.15);
+}
+
+.start-pomodoro .box-pomodoro:hover {
+    cursor: pointer;
+    background: linear-gradient(to right, #58ACA5, #fad0c4);
+    transform: scale(1.02);
+    transition: all 0.2s ease;
+}
+
+.start-quiz .box-quiz {
+    box-sizing: border-box;
+    margin-top: 35px;
+    background-color: #58ACA5;
+    overflow: hidden;
+    height: 200px;  
+    max-width: 900px;
+    width: 90%;
+    border-radius: 20px;
+    margin: 30px auto; 
+    box-shadow: 0 4px 6px rgb(0, 0, 0, 0.15);
+}
+
+.start-quiz .box-quiz:hover {
+    cursor: pointer;
+    background: linear-gradient(to right, #58ACA5, #fad0c4);
+    transform: scale(1.02);
+    transition: all 0.2s ease;
+}
+
+
+.line {
+    border: 0;
+    height: 3px;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+}
+
+.start-btn {
+    background-color: #ff9a9e;
+    color: #FFFFFF;
+    border: #ff9a9e;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    width: 160px;
+    height: 40px;
+    font-size: 20px;
+}
+
+.start-btn:hover {
+    cursor: pointer;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
 }
