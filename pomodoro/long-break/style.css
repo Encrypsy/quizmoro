@@ -120,3 +120,8 @@ button {
 button:hover {
     background-color: #a14d4d;
 }
+
+a {
+    text-decoration: none;
+    color: var(--color-transparent-black);
+}
