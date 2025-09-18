@@ -90,6 +90,7 @@ nav h2 {
 
 #timer {
     font-size: 10em;
+    background-color: var(--color-body);
 }
 
 .button-breaks {
